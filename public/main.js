@@ -18,7 +18,7 @@ const addHandler = async () => {
     return this._db.query(addQuery);
   }
   catch (e) {
-    populateErrorStatus();
+    $('#status').html(e);
   }
 };
 

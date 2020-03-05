@@ -8,6 +8,14 @@ $(document).ready(async () => {
 const addHandler = async () => {
   try {
     $('#status').html('last operation: add');
+    var urlVal = document.getElementById("myInput").value;
+    const addQuery = `      
+      INSERT INTO table(key, url)
+      VALUES
+        (1, ${urlVal})
+    `;
+
+    return this._db.query(addQuery);
   }
   catch (e) {
     populateErrorStatus();
